@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461;net45</TargetFrameworks>
     <PackageId>TestRail</PackageId>
-    <Version>2.0.5</Version>
+    <Version>2.0.6</Version>
     <PackageVersion>$(Version)</PackageVersion>
     <Title>TestRail Client</Title>
     <Authors>TestRail Client Committers</Authors>
@@ -12,20 +12,23 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>.Net Standard 2.0 implementation of the TestRail API</Description>
     <PackageReleaseNotes>
+    ##2.0.6
+    - Added Newtonsoft.Json NuGet package.
+    - Added Microsoft CSharp, otherwise it was not possible to use the library.
     ##2.0.5
-      - Make GetSections's suiteID parameter optional.
+    - Make GetSections's suiteID parameter optional.
     ##2.0.4
-      - Add offset parameter to GetRuns method (allows ability to get more than 250 most recent runs) 
+    - Add offset parameter to GetRuns method (allows ability to get more than 250 most recent runs)
     ##2.0.3
-      - Add the ability to delete a test run.
+    - Add the ability to delete a test run.
     ##2.0.2
-      - add Milestones property to handle sub-milestones in GetMilestone call
+    - add Milestones property to handle sub-milestones in GetMilestone call
     ##2.0.1
-      - add description to Section and add custom to run, plan, and other APIs
-      - Fix dotnet core bug with HttpWebRequest
+    - add description to Section and add custom to run, plan, and other APIs
+    - Fix dotnet core bug with HttpWebRequest
     ##2.0
-      - Converted the application to .Net Standard 2.0
-      - The client should work with any project on: .Net Framework 4.5, 4.6.1, .Net Core &gt;= 2.0, and .Net Standard &gt;= 2.0.
+    - Converted the application to .Net Standard 2.0
+    - The client should work with any project on: .Net Framework 4.5, 4.6.1, .Net Core &gt;= 2.0, and .Net Standard &gt;= 2.0.
     ##1.0.0.15
       - Bug Fix
         - Timespan field for Result class
@@ -59,7 +62,7 @@
     ##1.0.0.5
       - Update Json.net Nuget Package
     </PackageReleaseNotes>
-    <Copyright>Copyright 2017</Copyright>
+    <Copyright>Copyright 2020</Copyright>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
@@ -80,7 +83,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
 </Project>
